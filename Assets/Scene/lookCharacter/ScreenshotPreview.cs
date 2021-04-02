@@ -1,0 +1,69 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
+
+
+public class ScreenshotPreview : MonoBehaviour
+{
+    [SerializeField]
+    GameObject canvas;
+    string[] files = null;
+    int whichScreenShotIsshown = 0;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        files = Directory.GetFiles(Application.persistentDataPath + "/", "*.png");
+        if (files.Length > 0)
+        {
+            GetPictureAndShowIt();
+        }
+    }
+
+    void GetPictureAndShowIt()
+    {
+        string pathToFile = files[whichScreenShotIsshown];
+        Texture2D texture = GetScreenshotImage(pathToFile);
+        Sprite sp = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+        canvas.GetComponent<Image>().sprite = sp;
+            
+    }
+
+    Texture2D GetScreenshotImage(string filePath)
+    {
+        Texture2D texture = null;
+        byte[] fileBytes;
+        if (File.Exists(filePath))
+        {
+            fileBytes = File.ReadAllBytes(filePath);
+            texture = new Texture2D(2, 2, TextureFormat.RGB24, false);
+            texture.LoadImage(fileBytes);
+        }
+        return texture;
+    }
+
+    public void NextPicture()
+    {
+        if (files.Length > 0)
+        {
+            whichScreenShotIsshown += 1;
+            if (whichScreenShotIsshown > files.Length - 1)
+                whichScreenShotIsshown = 0;
+            GetPictureAndShowIt();
+        }
+    }
+
+    public void PreviousPicture()
+    {
+        if(files.Length > 0)
+        {
+            whichScreenShotIsshown -= 1;
+            if (whichScreenShotIsshown < 0)
+                whichScreenShotIsshown = files.Length - 1;
+            GetPictureAndShowIt();
+        }
+    }
+
+}
