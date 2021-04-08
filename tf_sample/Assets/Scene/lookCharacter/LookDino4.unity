@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d085077742715b74ca68021eb5462ae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Character: {fileID: 6246187072361586368, guid: ad864dab5a0ee4dc997a9bf9c5d802fc,
+  Character: {fileID: 3057692893774774896, guid: b73723ad44ddb4f4ebbe846c80897979,
     type: 3}
   CharacterManager: {fileID: 2052840695}
   SelectionGroup: []

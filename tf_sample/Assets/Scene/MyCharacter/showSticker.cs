@@ -247,6 +247,7 @@ public class showSticker : MonoBehaviour
     public void isClickDino()
     {
         int brush_level = (brush_lev - 100) / 10;
+
         if (brush_level == 0)
         {    
             Debug.Log("Click");
@@ -272,6 +273,7 @@ public class showSticker : MonoBehaviour
     public void isClickSino()
     {
         int eat_level = eat_lev / 10;
+        Debug.Log("eat_level: " + eat_level);
         if (eat_level == 0)
         {
             Debug.Log("Click");
@@ -301,10 +303,9 @@ public class showSticker : MonoBehaviour
         int eat_level = eat_lev / 10;
         int eat_stamp = eat_lev % 10;
 
-        switch (brush_level)
+        switch (eat_level)
         {
             case 0:
-                
                 lookSino1.SetActive(true);
                 break;
             case 1:

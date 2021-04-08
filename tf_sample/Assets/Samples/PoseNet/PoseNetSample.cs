@@ -150,7 +150,7 @@ public class PoseNetSample : MonoBehaviour
 
         draw = new PrimitiveDraw()
         {
-            color = Color.green,
+            color = Color.clear,
         };
 
         cancellationToken = this.GetCancellationTokenOnDestroy();
