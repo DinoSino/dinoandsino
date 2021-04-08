@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scene/Login/Login.unity
+    guid: 8ed7592871168fd469595a43db22e41e
+  - enabled: 0
+    path: Assets/Scene/storytelling/storytellingScene1.unity
+    guid: 1a93869916d6bec4e9decfa7687b43e5
+  - enabled: 0
+    path: Assets/Scene/storytelling/storytellingScene2.unity
+    guid: 7a9f7ff0f9912d84ead2c0f4997f48c3
+  - enabled: 0
+    path: Assets/Scene/Egg/EggScene.unity
+    guid: 927c5534b3ce15e4ea0879fe6399efc6
+  - enabled: 0
+    path: Assets/Scene/storytelling/storytellingScene3.unity
+    guid: 5773a6f725693b648872406088e5d765
+  - enabled: 0
+    path: Assets/Scene/storytelling/storytellingScene4.unity
+    guid: e899b9bb812824146bbb3f4ea85ca58a
+  - enabled: 0
+    path: Assets/Scene/storytelling/storytellingScene5.unity
+    guid: cc0bfcc6f626ccc4b88a675dbe583e7e
+  - enabled: 0
+    path: Assets/Scene/guide/guideline1.unity
+    guid: ad2039d4ff8bd2443b0eaed9f2d6227e
+  - enabled: 0
+    path: Assets/Scene/guide/guideline2.unity
+    guid: a6cb08a07d1fea34dba886fa08b84bae
+  - enabled: 0
+    path: Assets/Scene/guide/guideline3.unity
+    guid: 88d1e6a0f911dad488d0eea45602e55f
+  - enabled: 0
+    path: Assets/Scene/guide/guideline4.unity
+    guid: 4d3d7157d753f394d976d80da65d9def
+  - enabled: 0
+    path: Assets/Scene/Main.unity
+    guid: e7c8a0dca1a00be4095c3acb1f7e72b3
+  - enabled: 0
+    path: Assets/Scene/Eat/EatGuide.unity
+    guid: 4ba4dcbd7e9e1b54082f4eb90a2acb6d
+  - enabled: 0
+    path: Assets/Scene/Brush/BrushGuide.unity
+    guid: 545e920c9b1dcb044827b31d2f308be1
+  - enabled: 0
+    path: Assets/Samples/PoseNet/PoseNet.unity
+    guid: 338da8008aa764c05a72b5db18dc0d5c
+  - enabled: 1
+    path: Assets/Samples/PoseNet/PoseNet1.unity
+    guid: 1e050afa672ca1f4584fafdfeb7b3e76
+  - enabled: 0
+    path: Assets/Scene/Brush/FinishBrush.unity
+    guid: bf56e08e985ec1645b9a66e4e31613d4
+  - enabled: 0
+    path: Assets/Scene/Eat/FinishEating.unity
+    guid: 4d36c096fc1b9fa46a872926a7b63cf7
+  - enabled: 0
+    path: Assets/Scene/MyCharacter/MyCharacter.unity
+    guid: 87b330747a6ab3347aeb0859c1fb5b1a
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookDino1.unity
+    guid: 7482abccc723c234680346353e0aaa07
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookDino2.unity
+    guid: 4afba1e7ada35f84e9da334221917176
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookDino3.unity
+    guid: 7f4815b8a584c91439f2fe304f14e368
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookDino4.unity
+    guid: 88f587a730c3a824bbf9402e7077ada0
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookDino5.unity
+    guid: 42059b7589ff96243bb4052707e819e4
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookSino1.unity
+    guid: 4a61e49fb540b62419b4a1ef1f163c97
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookSino2.unity
+    guid: 6e93289430bc56a42add63078fd1feb1
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookSino3.unity
+    guid: 573e069fa8e517a4f84ee60e7c01dfc1
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookSino4.unity
+    guid: ccc7affdacb77364091115b6a6d7a2c4
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/LookSino5.unity
+    guid: c85149de4a882e54ebff41d2fa22da26
+  - enabled: 0
+    path: Assets/Scene/lookCharacter/gallery.unity
+    guid: 2d81443dc6d426c4f9fcfa9138e107e5
+  - enabled: 0
+    path: Assets/Scene/Setting/SettingScene.unity
+    guid: 89b9dedd9143f994f8af31bb2ea0bcd2
+  - enabled: 0
+    path: Assets/Scene/Setting/Notice.unity
+    guid: 6fe19c5d21527094e9a93e50fac459c2
+  - enabled: 0
+    path: Assets/Scene/Setting/Question.unity
+    guid: e5d68ebf98e30df4694f54371df95c1b
+  m_configObjects:
+    com.unity.xr.management.arcore_loader: {fileID: 11400000, guid: 5643018f15a855941870caf763dca5ea,
+      type: 2}
