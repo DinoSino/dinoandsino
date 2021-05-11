@@ -1,108 +1,148 @@
-🦷 영유아 습관 개선 어플리케이션 "디노와 시노"🥦
+# TensorFlow Lite for Unity Samples
 
-<br>
+[![openupm](https://img.shields.io/npm/v/com.github.asus4.tflite?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.github.asus4.tflite/)
 
+Porting of ["TensorFlow Lite Examples"](https://www.tensorflow.org/lite/examples) to Unity. and some utilities for Unity.
 
+Tested on  
 
-<br>
+- iOS / Android / macOS / Windows  
+- Unity 2019.4.17f1
+- TensorFlow 2.4.0
 
-<b>영유아의 습관교육 어플리케이션, '디노와 시노' 입니다. </b><br>
-> 영유아기는 기본생활습관이 형성되는 매우 중요한 시기 <br>
-> 영유아기에 형성된 습관은 이후 인간다운 생활을 위한 발달의 전제<br>
-> 아이들의 교육은 학습 기관에서 이루어지는 학습 외 가정 내에서의 지속적인 교육이 필요<br>
+Samples
 
+- TensorFlow
+  - MNIST
+  - SSD Object Detection
+  - DeepLab
+  - PoseNet
+  - Style Transfer
+  - Text Classification
+  - Bert Question and Answer
+- MediaPipe
+  - Hand Tracking
+  - Blaze Face
+  - Face Mesh
+  - Blaze Pose (Upper body)
+- MLKit
+  - Blaze Pose (Full body)
+- Meet Segmentation
 
-<b> 습관 교육이 어려우신 가요? </b></br>
-<b>"디노와 시노"를 통해 바른 습관교육을 해보세요!</b>
+Included prebuilt libraries
 
-</br>
+| | iOS | Android | macOS | Ubuntu | Windows |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Core CPU |✅|✅|✅|✅|✅|
+| Metal Delegate |✅| - |✅| - | - |
+| OpenGL Delegate | - |✅| - | - | - |
+| NNAPI Delegate | - |✅| - | - | - |
 
+- All libraries except iOS are targeted 64bit platform: arm64 or x86_64.
 
-<br>
+## Install TensorFlow Lite for Unity
 
-## 🔍 Project
+- Clone this repository with examples
+  - Need [Git-LFS](https://git-lfs.github.com/) to build for iOS
+- Or core library is available on [OpenUPM](https://openupm.com/packages/com.github.asus4.tflite/)
 
-* <b> capston design project
+## Build TensorFlow Lite libraries
 
-* 프로젝트 기간: 2020.09.01 ~ 2020.06.01
+Pre-built libraries are included. If you want to build the latest TFLite,
 
-* 디노와 시노는 영유아 습관교육 어플리케이션입니다.
+1. Clone [TensorFlow library](https://github.com/tensorflow/tensorflow/)
+2. Run `./configure` in the TensorFlow library
+3. Run `./build_tflite.py` (Python3) to build for each platform
 
+  ```sh
+  # Update iOS, Andoid and macOS
+  ./build_tflte.py --tfpath ../tensorflow -ios -android -macos
 
-</br>
+  # Build with XNNPACK
+  ./build_tflte.py --tfpath ../tensorflow -macos -xnnpack
+  ```
 
-<br>
-<br>
+- To build macOS Metal Delegate on TensorFlow v2.3.0 or later, You need to apply following changes [the issue](https://github.com/tensorflow/tensorflow/issues/41039#issuecomment-664701908)
 
+## TIPS
 
+\[Android\] You can see logs from tflite by filtering with "tflite"  
 
+```bash
+# Filtering logcat only Unity and tflite
+adb logcat Unity:V tflite:V "*:S"
+```
 
-## 🛠 개발 환경 및 사용한 라이브러리 (Development Environment and Using Library)
+## Show Cases
 
-### Development Environment
+__MNIST__  
+![Mnist](https://imgur.com/yi2MtCF.gif)
 
-- 안드로이드 전용 어플리케이션
-- unity 기반 개발
+__SSD Object Detection__  
+![SSD](https://imgur.com/Omeatqc.gif)
 
-</br>
+__DeepLab Semantic Segmentation__  
+![DeepLab](https://imgur.com/tH1Z8NG.gif)
 
-<br>
+__Style Transfer__  
+![styletransfter](https://i.imgur.com/SOLMjZi.gif)
 
-### Using Library  
+__Hand Tracking__  
+![handtracking](https://user-images.githubusercontent.com/357497/89078175-28179780-d384-11ea-8a35-8b48a31aa52d.gif)
 
-| 라이브러리(Library) | 목적(Purpose)         | 버전(Version)     |
-| :------------------ | :-------------    | -------------    |
-| tensorflowlite      | 양치 및 식사 행동 인식 |                  |
-| Arcore              | ar기반 스토리텔링     | preview1.4.0.0   |
+__BERT__  
+![BERT](https://user-images.githubusercontent.com/357497/89077837-6496c380-d383-11ea-96f8-a5ae6e61d603.png)
 
+## License
 
+Samples folder `Assets/Samples/*` is licensed under MIT
 
-</br>
+```markdown
+MIT License
 
-<br>
+Copyright (c) 2021 Koki Ibukuro
 
-## 👏 기능 소개 (Function Introduction)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-| Category        | Priority | Function | Implemention | 
-| :-------------- | :------- | :------: | :----------- | 
-|스플래쉬      | 1        |          | ⭕️            | 
-| 로그인/회원가입 | 1        |  로그인  | ⭕️            | 
-|                 | 1        | 회원가입 | ⭕️            |   
-|    인식             | 1        | 양치행위와 식사행위 인식 | ⭕️            |  
-|  스토리텔링               | 1        | 캐릭터보기 | ⭕️            |  
-  
-</br>
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-<br>
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
 
+Other Licenses
 
+- [TensorFlow](https://github.com/tensorflow/tensorflow/blob/master/LICENSE): Apache License 2.0
+- [MediaPipe](https://github.com/google/mediapipe/blob/master/LICENSE): Apache License 2.0
+  - Some MediaPipe C# codes are based on [terryky/tflite_gles_app](https://github.com/terryky/tflite_gles_app)
 
+Model Licenses
 
-## 🏞 간단한 화면 설명
+📌 : Each TensorFlow Lite model might have a different license. Please check the license of the model you use.
 
-1. 초기 로그인/ 회원가입 
-
-
-
-
-</br>
-
-<br>
-
-
-
-
-
-
-----
-
-## Developer
-
-
-
-* 권연수
-* 강혜빈
-
-
-
-</br>
+- [Official TFlite Models](https://www.tensorflow.org/lite/examples)
+  - Bert
+  - SSD
+  - DeepLab Lab
+  - MNIST
+  - Style Transfer
+  - PoseNet
+  - Text classification
+  - Smart Reply
+- [MediaPipe Models](https://github.com/google/mediapipe)
+  - Blaze Pose
+  - Face Mesh
+  - Hand Tracking
+- [Meet Segmentation Model](https://drive.google.com/file/d/1lnP1bRi9CSqQQXUHa13159vLELYDgDu0/view)
+  - Using the modified model from [PINTO_model_zoo](https://github.com/PINTO0309/PINTO_model_zoo) to remove the custom post-process.
