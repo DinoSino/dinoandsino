@@ -22,13 +22,14 @@ public class MainScript : MonoBehaviour
     public GameObject sino4;
     public GameObject sino5;
     // Start is called before the first frame update
+   
     void Start()
     {   
         nickText.text = PlayerPrefs.GetString("Name");
         dino_level = PlayerPrefs.GetInt("stickerDino");
         sino_level = PlayerPrefs.GetInt("stickerSino");
         DinoSino();
-
+       
     }
 
     // Update is called once per frame

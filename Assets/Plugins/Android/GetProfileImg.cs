@@ -37,6 +37,7 @@ public class GetProfileImg : MonoBehaviour
         catch
         {
             //Local Path가 없는데요?
+            
         }
     }
 

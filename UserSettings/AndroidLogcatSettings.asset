@@ -3,17 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "5200f16fec51c41d",
         "name": "com.asus4.tfliteunitysample",
-        "processId": 15840,
+        "processId": 1079,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "5200f16fec51c41d",
-            "name": "com.asus4.tfliteunitysample",
-            "processId": 27098,
-            "exited": true
-        },
         {
             "deviceId": "5200f16fec51c41d",
             "name": "com.asus4.tfliteunitysample",
@@ -42,6 +36,12 @@
             "deviceId": "5200f16fec51c41d",
             "name": "com.asus4.tfliteunitysample",
             "processId": 15840,
+            "exited": true
+        },
+        {
+            "deviceId": "5200f16fec51c41d",
+            "name": "com.asus4.tfliteunitysample",
+            "processId": 1079,
             "exited": false
         }
     ],
