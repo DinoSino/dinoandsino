@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4aaea9368024674d9d54e81169255b3
+guid: 922b1f993e3a93e4c9f83716590a6e67
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
@@ -7,53 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Capsule-(Extrude)
-    second: {fileID: 2100000, guid: 31afeba57ae463d42962c5408ce918b7, type: 2}
+      name: Capsule-(Extrude).1
+    second: {fileID: 2100000, guid: c49d948cb654e01498ba0fbf0a5086f0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Sphere
-    second: {fileID: 2100000, guid: 3c41de989362f214d97e4b0b2c7f5598, type: 2}
+      name: Mat
+    second: {fileID: 2100000, guid: 684472d4e081a2840bf6fbc0a91e7235, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: eyes
-    second: {fileID: 2100000, guid: c23923d7e55def6438035fbd82167b06, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: "\uBAB8\uD1B5"
-    second: {fileID: 2100000, guid: 4af5bc91c80b7d94b9ae62e531f869cb, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Capsule-(Extrude)Surface_Color
-    second: {fileID: 2800000, guid: 80a322b457f96294198c11fcc3c1b08c, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: SphereSurface_Color
-    second: {fileID: 2800000, guid: 599e63df05ba8eb49b32fc683f402faa, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: d
-    second: {fileID: 2800000, guid: 76772c69aa8299f4182d6bd44aaefcfa, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: eyesSurface_Color
-    second: {fileID: 2800000, guid: 3f4d92522d7ddad4697b8f96f0e762a5, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "\u1103\u1175\u1102\u1169_\u110B\u1161\u11AF"
-    second: {fileID: 2800000, guid: 8bfc8790e2d2a0d4b835c0d375e0ef48, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: "\u1106\u1169\u11B7\u1110\u1169\u11BCSurface_Color"
-    second: {fileID: 2800000, guid: b3f3d502b47712740a32332f37d865f9, type: 3}
+      name: Mat.1
+    second: {fileID: 2100000, guid: 8092f3e2a2144f34e83efaafc8f5059c, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
