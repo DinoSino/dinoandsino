@@ -35,7 +35,7 @@ public class ExampleTest : MonoBehaviour
         }
     }
 
-    private IEnumerator TakeScreenshotAndSave()
+    public IEnumerator TakeScreenshotAndSave()
     {
         yield return new WaitForEndOfFrame();
 

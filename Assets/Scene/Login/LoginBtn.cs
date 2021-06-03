@@ -82,11 +82,17 @@ using System;
            
 
             var success = obj.GetField("success").ToString() == "false" ? false : true;
+
             if (success)
             {
-                SceneManager.LoadScene("storytellingScene1");
-               
-                
+                if (brush == 100 && eat == 0)
+
+                {
+                    SceneManager.LoadScene("storytellingScene1");
+                }
+
+                else
+                    SceneManager.LoadScene("Main");
             }
             else
             {
@@ -94,8 +100,9 @@ using System;
                 notLoginPanel.SetActive(true);
             }
 
-            //var nick = obj.GetField(newnicknamefield.text).ToString();
-            var nick = obj.GetField("usernickName").ToString();////제생각엔 이런식으로 값 저장했던것 같습니다.
+
+        //var nick = obj.GetField(newnicknamefield.text).ToString();
+        var nick = obj.GetField("usernickName").ToString();////제생각엔 이런식으로 값 저장했던것 같습니다.
             var uemail = emailField.text;
             PlayerPrefs.SetString("uemail", uemail);
             PlayerPrefs.SetString("Name", nick);
@@ -118,6 +125,23 @@ using System;
             Debug.Log("eat: " + eat);
 
             LogList.Add(new LoginInfo(nick.ToString())); //아무값도 저장되지 않는 것 같습니다. null값이 저장되니 이렇게 받는게 아닌듯 합니다.
+           
+            if (success)
+            {
+                if (brush == 100 && eat == 0)
+
+                {
+                    SceneManager.LoadScene("storytellingScene1");
+                }
+            
+                else
+                 SceneManager.LoadScene("Main");
+            }
+            else
+             {
+              Debug.Log("2");
+              notLoginPanel.SetActive(true);
+             }
 
             Debug.Log(webRequest.text);
             JsonData InfoJson = JsonMapper.ToJson(LogList);  //json파일 만들기
@@ -128,10 +152,7 @@ using System;
             
         }
         
-        static void LoadDino(JSONObject obj)
-        {
-            
-        }
+     
         public void notLogin()
         {
             notLoginPanel.SetActive(false);

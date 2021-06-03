@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 public class PoseNetSample1 : MonoBehaviour
 {
     public static PoseNetSample1 Inst = null;
+
     void Awake()
     {
         if (Inst == null)
@@ -24,6 +25,8 @@ public class PoseNetSample1 : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+     
     }
 
     public Image randomImage;
@@ -66,8 +69,9 @@ public class PoseNetSample1 : MonoBehaviour
     public bool audioSW;
     public bool effectSW;
     public float ttk;
-
-
+    //audio
+    //public AudioClip[] Music = new AudioClip[4];
+    
     public GameObject Panel_pause;
     
 
@@ -76,7 +80,7 @@ public class PoseNetSample1 : MonoBehaviour
         gameTime = 30.0f;//이거로 시간 조정!
         time = 0.0f;
         stopTimer = false;
-        timerSlider.maxValue = gameTime;//돌려봅시다..안될거같긴한데
+        timerSlider.maxValue = gameTime;
         timerSlider.value = gameTime;
         ttk = gameTime;
 
@@ -92,7 +96,8 @@ public class PoseNetSample1 : MonoBehaviour
         text_images[2] = t2;
         text_images[3] = t3;
         StartCoroutine(changeImage());
-
+        //audio 랜덤
+        
         audioSource.Play();
         ps.Play();
         
@@ -182,16 +187,13 @@ public class PoseNetSample1 : MonoBehaviour
             stopTimer = true;
             gameTime = ttk;
             SceneManager.LoadScene("FinishEating");
-            //이렇게 돌려볼게요
-
         }
 
         if (stopTimer == false)
         {
             timerText.text = textTime;
             timerSlider.value = time;
-           
-
+         
         }
         if(stopTimer == true)
         {
@@ -263,7 +265,6 @@ public class PoseNetSample1 : MonoBehaviour
                 0.5f
             );
 
-
         }
 
         draw.Apply();
@@ -274,10 +275,15 @@ public class PoseNetSample1 : MonoBehaviour
     {
         if (sw)
         {
+            
+            //audioSource.clip = Music[Random.Range(0, Music.Length)];
             audioSource.volume = 1.0f;
+            //audioSource.Play();
         }
         else
         {
+            
+            //audioSource.clip = Music[Random.Range(0, Music.Length)];
             audioSource.volume = 0.0f;
             
         }

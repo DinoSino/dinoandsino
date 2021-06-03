@@ -7,9 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class showSticker : MonoBehaviour
 {
-    public int brush_level;
-    public int eat_level;
-
     public GameObject stamp1;
     public GameObject stamp2;
     public GameObject stamp3;
@@ -65,6 +62,11 @@ public class showSticker : MonoBehaviour
     public int sticker_brushaa;
     public int brush_lev;
 
+    //스티커
+    public int brush_level;
+    public int eat_level;
+    public int eat_stamp;
+    public int brush_stamp;
 
     // Start is called before the first frame update
     void Start()
@@ -90,7 +92,6 @@ public class showSticker : MonoBehaviour
         
         if (sticker_eatpp > sticker_eat)
         {
-        
             eat_lev = sticker_eatpp;
             Debug.Log("eat_lev: " + eat_lev);
             sinoLev();
@@ -102,7 +103,6 @@ public class showSticker : MonoBehaviour
             eat_lev = sticker_eat;
             Debug.Log("eat_lev: " + eat_lev);
             sinoLev();
-
         }
       
     }
@@ -122,7 +122,6 @@ public class showSticker : MonoBehaviour
             brush_lev = sticker_brushpp;
             Debug.Log("sticker_brush_num: " + brush_level);
             dinoLev();
-            
         }
         else
         {
@@ -147,17 +146,36 @@ public class showSticker : MonoBehaviour
                 lookDino1.SetActive(true);
                 break;
             case 1:
+                if(brush_stamp == 0)
+                {
+                    lookDino1.SetActive(true);
+                    break;
+                }
                 lookDino2.SetActive(true);
-                
                 break;
             case 2:
+                if (brush_stamp == 0)
+                {
+                    lookDino2.SetActive(true);
+                    break;
+                }
                 lookDino3.SetActive(true);
                 break;
             case 3:
+                if (brush_stamp == 0)
+                {
+                    lookDino3.SetActive(true);
+                    break;
+                }
                 lookDino4.SetActive(true);
                 break;
             case 4:
-               lookDino5.SetActive(true);
+                if (brush_stamp == 0)
+                {
+                    lookDino4.SetActive(true);
+                    break;
+                }
+                lookDino5.SetActive(true);
                 break;
         }
         
@@ -166,6 +184,33 @@ public class showSticker : MonoBehaviour
 
         switch (brush_stamp)
         {
+            case 0:
+                if (brush_level == 0)
+                {
+                    stamp101.SetActive(false);
+                    stamp102.SetActive(false);
+                    stamp103.SetActive(false);
+                    stamp104.SetActive(false);
+                    stamp105.SetActive(false);
+                    stamp106.SetActive(false);
+                    stamp107.SetActive(false);
+                    stamp108.SetActive(false);
+                    stamp109.SetActive(false);
+                    stamp110.SetActive(false);
+                    break;
+                }
+                else
+                stamp101.SetActive(true);
+                stamp102.SetActive(true);
+                stamp103.SetActive(true);
+                stamp104.SetActive(true);
+                stamp105.SetActive(true);
+                stamp106.SetActive(true);
+                stamp107.SetActive(true);
+                stamp108.SetActive(true);
+                stamp109.SetActive(true);
+                stamp110.SetActive(true);
+                break;
             case 1:
                 stamp101.SetActive(true);
                 break;
@@ -229,24 +274,13 @@ public class showSticker : MonoBehaviour
                 stamp108.SetActive(true);
                 stamp109.SetActive(true);
                 break;
-            case 10:
-                stamp101.SetActive(true);
-                stamp102.SetActive(true);
-                stamp103.SetActive(true);
-                stamp104.SetActive(true);
-                stamp105.SetActive(true);
-                stamp106.SetActive(true);
-                stamp107.SetActive(true);
-                stamp108.SetActive(true);
-                stamp109.SetActive(true);
-                stamp110.SetActive(true);
-                break;
-
+           
         }
     }
     public void isClickDino()
     {
         int brush_level = (brush_lev - 100) / 10;
+        int brush_stamp = (brush_lev - 100) % 10;
 
         if (brush_level == 0)
         {    
@@ -255,24 +289,46 @@ public class showSticker : MonoBehaviour
         }
         if (brush_level == 1)
         {
+            if(brush_stamp == 0)
+            {
+                SceneManager.LoadScene("LookDino1");
+            }
+            else
             SceneManager.LoadScene("LookDino2");
         }
         if (brush_level == 2)
         {
-            SceneManager.LoadScene("LookDino3");
+            if (brush_stamp == 0)
+            {
+                SceneManager.LoadScene("LookDino2");
+            }
+            else
+                SceneManager.LoadScene("LookDino3");
         }
         if (brush_level == 3)
         {
-            SceneManager.LoadScene("LookDino4");
+            if (brush_stamp == 0)
+            {
+                SceneManager.LoadScene("LookDino3");
+            }
+            else
+                SceneManager.LoadScene("LookDino4");
         }
         if (brush_level == 4)
         {
-            SceneManager.LoadScene("LookDino5");
+            if (brush_stamp == 0)
+            {
+                SceneManager.LoadScene("LookDino4");
+            }
+            else
+                SceneManager.LoadScene("LookDino5");
         }
     }
     public void isClickSino()
     {
         int eat_level = eat_lev / 10;
+        int eat_stamp = eat_lev % 10;
+
         Debug.Log("eat_level: " + eat_level);
         if (eat_level == 0)
         {
@@ -282,19 +338,39 @@ public class showSticker : MonoBehaviour
         }
         if (eat_level == 1)
         {
+            if (eat_stamp == 0)
+            {
+                SceneManager.LoadScene("LookSino1");
+            }
+            else
             SceneManager.LoadScene("LookSino2");
         }
         if (eat_level == 2)
         {
-            SceneManager.LoadScene("LookSino3");
+            if (eat_stamp == 0)
+            {
+                SceneManager.LoadScene("LookSino2");
+            }
+            else
+                SceneManager.LoadScene("LookSino3");
         }
         if (eat_level == 3)
         {
-            SceneManager.LoadScene("LookSino4");
+            if (eat_stamp == 0)
+            {
+                SceneManager.LoadScene("LookSino3");
+            }
+            else
+                SceneManager.LoadScene("LookSino4");
         }
         if (eat_level == 4)
         {
-            SceneManager.LoadScene("LookSino5");
+            if (eat_stamp == 0)
+            {
+                SceneManager.LoadScene("LookSino4");
+            }
+            else
+                SceneManager.LoadScene("LookSino5");
         }
     }
     public void sinoLev()
@@ -309,22 +385,68 @@ public class showSticker : MonoBehaviour
                 lookSino1.SetActive(true);
                 break;
             case 1:
+                if(eat_stamp == 0)
+                {
+                    lookSino1.SetActive(true);
+                    break;
+                }
                 lookSino2.SetActive(true);
-
                 break;
             case 2:
+                if(eat_stamp == 0)
+                {
+                    lookSino2.SetActive(true);
+                    break;
+                }
                 lookSino3.SetActive(true);
                 break;
             case 3:
+                if(eat_stamp == 0)
+                {
+                    lookSino3.SetActive(true);
+                    break;
+                }
                 lookSino4.SetActive(true);
                 break;
             case 4:
+                if (eat_stamp == 0)
+                {
+                    lookSino4.SetActive(true);
+                    break;
+                }
                 lookSino5.SetActive(true);
                 break;
         }
 
         switch (eat_stamp)
         {
+            case 0:
+                if(eat_level == 0)
+                { 
+                    stamp1.SetActive(false);
+                    stamp2.SetActive(false);
+                    stamp3.SetActive(false);
+                    stamp4.SetActive(false);
+                    stamp5.SetActive(false);
+                    stamp6.SetActive(false);
+                    stamp7.SetActive(false);
+                    stamp8.SetActive(false);
+                    stamp9.SetActive(false);
+                    stamp10.SetActive(false);
+                    break;
+                }
+                stamp1.SetActive(true);
+                stamp2.SetActive(true);
+                stamp3.SetActive(true);
+                stamp4.SetActive(true);
+                stamp5.SetActive(true);
+                stamp6.SetActive(true);
+                stamp7.SetActive(true);
+                stamp8.SetActive(true);
+                stamp9.SetActive(true);
+                stamp10.SetActive(true);
+                break;
+
             case 1:
                 stamp1.SetActive(true);
                 break;
@@ -388,19 +510,6 @@ public class showSticker : MonoBehaviour
                 stamp8.SetActive(true);
                 stamp9.SetActive(true);
                 break;
-            case 10:
-                stamp1.SetActive(true);
-                stamp2.SetActive(true);
-                stamp3.SetActive(true);
-                stamp4.SetActive(true);
-                stamp5.SetActive(true);
-                stamp6.SetActive(true);
-                stamp7.SetActive(true);
-                stamp8.SetActive(true);
-                stamp9.SetActive(true);
-                stamp10.SetActive(true);
-                break;
-
         }
     }
 

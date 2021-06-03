@@ -44,7 +44,9 @@ public class MainScript : MonoBehaviour
     public void DinoSino()
     {
         int level_text_dino = (dino_level - 100) / 10;
+        int level_stamp_dino = (dino_level - 100) % 10;
         int level_text_sino = sino_level / 10;
+        int level_stamp_sino = sino_level % 10;
         Debug.Log(level_text_dino);
         Debug.Log(level_text_sino);
 
@@ -54,39 +56,81 @@ public class MainScript : MonoBehaviour
         }
         if(level_text_dino == 1)
         {
+            if(level_stamp_dino == 0)
+            {
+                dino1.SetActive(true);
+                
+            }
+            else
             dino2.SetActive(true);
         }
         if(level_text_dino == 2)
         {
-            dino3.SetActive(true);
+            if (level_stamp_dino == 0)
+            {
+                dino2.SetActive(true);
+            }
+            else
+                dino3.SetActive(true);
         }
         if(level_text_dino == 3)
-        {
+            if (level_stamp_dino == 0)
+            {
+                dino3.SetActive(true);
+            }
+            else
+            {
             dino4.SetActive(true);
         }
         if(level_text_dino == 4)
         {
-            dino5.SetActive(true);
+            if (level_stamp_dino == 0)
+            {
+                dino4.SetActive(true);
+            }
+            else
+                dino5.SetActive(true);
         }
         //sino
         if (level_text_sino == 0)
         {
+            
             sino1.SetActive(true);
         }
         if (level_text_sino == 1)
         {
+            if(level_stamp_sino == 0)
+            {
+                sino1.SetActive(true);
+            }
+            else
             sino2.SetActive(true);
         }
         if (level_text_sino == 2)
         {
-            sino3.SetActive(true);
+            if (level_stamp_sino == 0)
+            {
+                sino2.SetActive(true);
+            }
+            else
+                sino3.SetActive(true);
         }
         if (level_text_sino == 3)
         {
-            sino4.SetActive(true);
+            if (level_stamp_sino == 0)
+            {
+                sino3.SetActive(true);
+            }
+            else
+                sino4.SetActive(true);
         }
         if (level_text_sino == 4)
-        {
+            if (level_stamp_sino == 0)
+            {
+                sino4.SetActive(true);
+            }
+            else
+            {
             sino5.SetActive(true);
         }
         

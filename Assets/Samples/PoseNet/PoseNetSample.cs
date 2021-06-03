@@ -78,7 +78,7 @@ public class PoseNetSample : MonoBehaviour
     UniTask<bool> task;
     PoseNet.Result[] results;
     CancellationToken cancellationToken;
-
+    
     public bool audioSW;
     public bool effectSW;
     public float ttk;
@@ -120,7 +120,7 @@ public class PoseNetSample : MonoBehaviour
 
         audioSource.Play();
         ps.Play();
-
+        
         string path = Path.Combine(Application.streamingAssetsPath, fileName);
         poseNet = new PoseNet(path);
         // Init camera
@@ -155,6 +155,7 @@ public class PoseNetSample : MonoBehaviour
 
         cancellationToken = this.GetCancellationTokenOnDestroy();
 
+
     }
     IEnumerator changeImage()//image
     {
@@ -173,7 +174,6 @@ public class PoseNetSample : MonoBehaviour
                     yield break;
 
                 }
-
 
             }
             timer += Time.deltaTime;
@@ -194,29 +194,23 @@ public class PoseNetSample : MonoBehaviour
     {
         time = gameTime -= Time.deltaTime;
 
-
         int seconds = Mathf.FloorToInt(time - 1f + 1);
 
         //Debug.Log($"time : {time} , gameTime : {gameTime}, seconds : {seconds}");
         string textTime = string.Format("{000}초", seconds);
 
         if (time <= 0)//
-
         {
             textTime = "0초";
             stopTimer = true;
             gameTime = ttk;
             SceneManager.LoadScene("FinishBrush");
-            //이렇게 돌려볼게요
-
         }
 
         if (stopTimer == false)
         {
             timerText.text = textTime;
             timerSlider.value = time;
-
-
         }
         if (stopTimer == true)
         {
@@ -340,7 +334,6 @@ public class PoseNetSample : MonoBehaviour
         audioSource.Stop();
         ps.Emit(0);
 
-
     }
 
     public void ContinueBtn()
@@ -350,7 +343,6 @@ public class PoseNetSample : MonoBehaviour
         webcamTexture.Play();
         audioSource.Play();
         ps.Emit(1);
-
 
     }
     public void BackBtn()//돌아가기 어디로?

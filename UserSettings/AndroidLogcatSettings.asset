@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "5200f16fec51c41d",
         "name": "com.asus4.tfliteunitysample",
-        "processId": 1079,
+        "processId": 27957,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,37 +11,43 @@
         {
             "deviceId": "5200f16fec51c41d",
             "name": "com.asus4.tfliteunitysample",
-            "processId": 31178,
-            "exited": true
-        },
-        {
-            "deviceId": "5200f16fec51c41d",
-            "name": "com.asus4.tfliteunitysample",
-            "processId": 7654,
-            "exited": true
-        },
-        {
-            "deviceId": "5200f16fec51c41d",
-            "name": "com.asus4.tfliteunitysample",
-            "processId": 6897,
-            "exited": true
-        },
-        {
-            "deviceId": "5200f16fec51c41d",
-            "name": "com.asus4.tfliteunitysample",
-            "processId": 20874,
-            "exited": true
-        },
-        {
-            "deviceId": "5200f16fec51c41d",
-            "name": "com.asus4.tfliteunitysample",
-            "processId": 15840,
-            "exited": true
-        },
-        {
-            "deviceId": "5200f16fec51c41d",
-            "name": "com.asus4.tfliteunitysample",
             "processId": 1079,
+            "exited": true
+        },
+        {
+            "deviceId": "5200f16fec51c41d",
+            "name": "com.asus4.tfliteunitysample",
+            "processId": 8308,
+            "exited": true
+        },
+        {
+            "deviceId": "5200f16fec51c41d",
+            "name": "com.asus4.tfliteunitysample",
+            "processId": 15182,
+            "exited": true
+        },
+        {
+            "deviceId": "5200f16fec51c41d",
+            "name": "com.sec.android.app.myfiles",
+            "processId": 13051,
+            "exited": false
+        },
+        {
+            "deviceId": "5200f16fec51c41d",
+            "name": "com.asus4.tfliteunitysample",
+            "processId": 17199,
+            "exited": true
+        },
+        {
+            "deviceId": "5200f16fec51c41d",
+            "name": "com.asus4.tfliteunitysample",
+            "processId": 19974,
+            "exited": true
+        },
+        {
+            "deviceId": "5200f16fec51c41d",
+            "name": "com.asus4.tfliteunitysample",
+            "processId": 27957,
             "exited": false
         }
     ],
