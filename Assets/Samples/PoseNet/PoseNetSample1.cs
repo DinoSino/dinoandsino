@@ -77,7 +77,7 @@ public class PoseNetSample1 : MonoBehaviour
 
     void Start()
     {
-        gameTime = 30.0f;//이거로 시간 조정!
+        gameTime = 1800.0f;//이거로 시간 조정!
         time = 0.0f;
         stopTimer = false;
         timerSlider.maxValue = gameTime;
